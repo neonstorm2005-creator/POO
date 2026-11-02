@@ -1,0 +1,13 @@
+classDiagram
+    class Vehicule {
+        -int vitesse
+        +accelerer()
+        +freiner()
+    }
+
+    class Voiture {
+        -int nombrePortes
+        +klaxonner()
+    }
+
+    Vehicule <|-- Voiture
