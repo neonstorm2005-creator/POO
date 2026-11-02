@@ -2,6 +2,6 @@
 
 int main()
 {
-    std::cout << "Bonjour POO !" << std::endl;
+    std::cout << "Mon projet POO fonctionne !" << std::endl;
     return 0;
 }
