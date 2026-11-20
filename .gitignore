@@ -1,2 +1,13 @@
-programme
+# Exécutables et binaires
+main
+main-debug
 *.o
+
+# Dossiers de sortie générés par le mode console
+*_out/
+
+# Fichiers système et de configuration IDE
+.DS_Store
+.ccls-cache/
+.vscode/
+.idea/
