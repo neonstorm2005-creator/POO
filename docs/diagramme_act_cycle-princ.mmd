@@ -1,0 +1,19 @@
+flowchart TD
+    debut(["Début"]) --> args["Lire les arguments de la ligne de commande"]
+    args --> argsOk{"Arguments valides ?"}
+    argsOk -->|non| usage["Afficher l'usage"]
+    usage --> fin(["Fin"])
+    argsOk -->|oui| lecture["Lire le fichier d'entrée (LecteurGrille)"]
+    lecture --> formatOk{"Format conforme ?"}
+    formatOk -->|non| erreur["Afficher l'erreur de format"]
+    erreur --> fin
+    formatOk -->|oui| mode{"Mode demandé ?"}
+    mode -->|console| sortie0["Créer le dossier de sortie et écrire la génération 0"]
+    mode -->|graphique| fenetre["Ouvrir la fenêtre SFML"]
+    sortie0 --> calcul
+    fenetre --> calcul
+    calcul["Calculer la génération suivante (voir activité 2)"] --> notif["Notifier les observateurs"]
+    notif --> stop{"Stable, N atteint ou fenêtre fermée ?"}
+    stop -->|non| attente["Mode graphique : attendre le délai et traiter les événements"]
+    attente --> calcul
+    stop -->|oui| fin
